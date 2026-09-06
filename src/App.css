@@ -1,148 +1,171 @@
-@font-face {
-  font-family:mamak ;
-  src: url(/poke.ttf);
-}
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@700&family=Lato&display=swap');
-
-h1{
-  text-align:center;
-  font-size: 60px;
-  color:black;
-  cursor:default;
-  font-family: 'mamak';
-  -webkit-text-stroke: 5px white;
-    paint-order: stroke fill;        /* ← this makes stroke render BEHIND the fill */
-  margin: 0 auto;
+    @font-face {
+    font-family:mamak ;
+    src: url(poke.ttf);
   }
+  @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@700&family=Lato&display=swap');
 
-input{
-  margin:auto;
-  display:block;
-  height:200%;
-  width:50%;
-  border-radius:20px;
-  padding:10px;
-  color:white;
-  background-color: rgba(34, 33, 33, 0.4);
-  border: 2px solid black;  
-}
-input::placeholder{
-  color:rgb(221, 218, 218);
-} 
-.card img {
-  display: block;
-  width: 100%;
-  max-width: 180px;
-  height: auto;
-  aspect-ratio: 1;
-  object-fit: contain;
-  box-sizing: border-box;
-  margin: 0 auto;
-  border-radius: 12px;
-  border: 4px solid #b8860b;
-  background: linear-gradient(135deg, #e8f4f8, #c8e6f0, #e8f4f8);
-  box-shadow: inset 0 0 15px rgba(0,0,0,0.1);
-    padding: 8px;
-}
-.card{
-   --first:  hsl(0, 80%, 30%);
-  --second: hsl(0, 70%, 50%);
-  --third:  hsl(0, 60%, 20%);
-  width: 25%;
-  box-sizing: border-box;
-  height: auto;
-  display:block;
-  background:
-    /* dark vignette corners */
-    radial-gradient(ellipse at top left, rgba(0,0,0,0.6) 0%, transparent 60%),
-    radial-gradient(ellipse at bottom right, rgba(0,0,0,0.6) 0%, transparent 60%),
-    /* orange center glow */
-    radial-gradient(ellipse at 60% 40%, var(--first), transparent 55%),
-    /* main red base */
-    radial-gradient(ellipse at center, var(--second), var(--third) 50%, #3a0000 100%);
-  border: 2px solid black;
-  border-radius: 10px;   
-  padding: 20px;        
-  padding-top: 1px;  
-  margin: 24px auto 0;
-  
- }
-  
-p{
-  background-color: color-mix(in srgb, var(--first) 40%, transparent);  
-  width: 42%;
-  border-radius: 5px;
-  padding: 2px;
-    color:white;
-  font-family: 'Nunito', sans-serif;
-  margin: 0;
-  text-transform: capitalize;
-}
-.top{
-  display:flex;
-  align-items: center;
-  gap: 10px;
-  justify-content: space-between;
-  margin: 8px 0 12px;
-}
-.top .name,
-.top .hp {
-  box-sizing: border-box;
-  background-color: color-mix(in srgb, var(--second) 40%, transparent);
-  line-height: 1.2;
-}
-.hp {
-  flex: 0 0 auto;
-  width: auto;
-  min-width: 58px;
-  text-align: center;
-  font-size: 15px;
-  color: white;
-  cursor: default;
-  background-color: color-mix(in srgb, var(--second) 40%, transparent);
-  border-radius: 10px;
-  margin: 0;
-  padding: 4px 8px;
-}
-.name{
-  flex: 1 1 auto;
-  min-width: 0;
-  text-align: center;
-  font-size: 25px;
-  color: white;
-  cursor: default;
-  background-color: color-mix(in srgb, var(--second) 40%, transparent);
-  border-radius: 10px;
-  margin: 0;
-  padding: 4px 8px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-text-transform: capitalize;
-} 
-.card > p {
-  box-sizing: border-box;
-  width: 100%;
-  margin: 0 0 8px;
-  padding: 6px 10px;
-  background-color: color-mix(in srgb, var(--second) 40%, transparent);
-}
-
-button{
-  display: block;
-  width: 100%;
-  box-sizing: border-box;
-  color: #000000;
-  background-color: color-mix(in srgb, var(--third ) 70%, rgb(218, 171, 171));
-  border-radius: 10px;
-  border: 1px solid black;
-  padding: 8px 16px;
-  height: 40px;
-  font-family: inherit;
-  line-height: 1;
-  white-space: nowrap;
-  &:hover{
-    box-shadow: 0px 2px 24px 2px var(--first);
+  h1{
+    text-align:center;
+    font-size: clamp(2.25rem, 8vw, 60px);
+    color:black;
+    cursor:default;
     font-family: 'mamak';
+    -webkit-text-stroke: 5px white;
+      paint-order: stroke fill;        /* ← this makes stroke render BEHIND the fill */
+    margin: 0 auto 20px;
+    padding: 0 16px;
+    line-height: 1.1;
+    }
+
+  input{
+    margin:auto;
+    display:block;
+    width: min(50%, 420px);
+    min-height: 48px;
+    box-sizing: border-box;
+    border-radius:20px;
+    padding:10px 16px;
+    color:white;
+    background-color: rgba(34, 33, 33, 0.4);
+    border: 2px solid black;  
+    font: 1rem/1.2 'Lato', sans-serif;
   }
-}
+  input::placeholder{
+    color:rgb(221, 218, 218);
+  } 
+  .card img {
+    display: block;
+    width: 100%;
+    max-width: 180px;
+    height: auto;
+    aspect-ratio: 1;
+    object-fit: contain;
+    box-sizing: border-box;
+    margin: 0 auto;
+    border-radius: 12px;
+    border: 4px solid #b8860b;
+    background: linear-gradient(135deg, #e8f4f8, #c8e6f0, #e8f4f8);
+    box-shadow: inset 0 0 15px rgba(0,0,0,0.1);
+      padding: 8px;
+  }
+  .card{
+    --first:  hsl(0, 80%, 30%);
+    --second: hsl(0, 70%, 50%);
+    --third:  hsl(0, 60%, 20%);
+    width: min(92%, 360px);
+    box-sizing: border-box;
+    height: auto;
+    display:block;
+    background:
+      /* dark vignette corners */
+      radial-gradient(ellipse at top left, rgba(0,0,0,0.6) 0%, transparent 60%),
+      radial-gradient(ellipse at bottom right, rgba(0,0,0,0.6) 0%, transparent 60%),
+      /* orange center glow */
+      radial-gradient(ellipse at 60% 40%, var(--first), transparent 55%),
+      /* main red base */
+      radial-gradient(ellipse at center, var(--second), var(--third) 50%, #3a0000 100%);
+    border: 2px solid black;
+    border-radius: 10px;   
+    padding: 20px;        
+    padding-top: 1px;  
+    margin: 24px auto 0;
+    
+  }
+    
+  p{
+    background-color: color-mix(in srgb, var(--first) 40%, transparent);  
+    width: 42%;
+    border-radius: 5px;
+    padding: 2px;
+      color:white;
+    font-family: 'Nunito', sans-serif;
+    margin: 0;
+    text-transform: capitalize;
+  }
+  .top{
+    display:flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: space-between;
+    margin: 8px 0 12px;
+  }
+  .top .name,
+  .top .hp {
+    box-sizing: border-box;
+    background-color: color-mix(in srgb, var(--second) 40%, transparent);
+    line-height: 1.2;
+  }
+  .hp {
+    flex: 0 0 auto;
+    width: auto;
+    min-width: 58px;
+    text-align: center;
+    font-size: 15px;
+    color: white;
+    cursor: default;
+    background-color: color-mix(in srgb, var(--second) 40%, transparent);
+    border-radius: 10px;
+    margin: 0;
+    padding: 4px 8px;
+  }
+  .name{
+    flex: 1 1 auto;
+    min-width: 0;
+    text-align: center;
+    font-size: 25px;
+    color: white;
+    cursor: default;
+    background-color: color-mix(in srgb, var(--second) 40%, transparent);
+    border-radius: 10px;
+    margin: 0;
+    padding: 4px 8px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  text-transform: capitalize;
+  } 
+  .card > p {
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0 0 8px;
+    padding: 6px 10px;
+    background-color: color-mix(in srgb, var(--second) 40%, transparent);
+  }
+
+  button{
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    color: #000000;
+    background-color: color-mix(in srgb, var(--third ) 70%, rgb(218, 171, 171));
+    border-radius: 10px;
+    border: 1px solid black;
+    padding: 8px 16px;
+    height: 40px;
+    font-family: inherit;
+    line-height: 1;
+    white-space: nowrap;
+    &:hover{
+      box-shadow: 0px 2px 24px 2px var(--first);
+      font-family: 'mamak';
+    }
+  }
+
+  @media (max-width: 480px) {
+    h1 {
+      -webkit-text-stroke-width: 3px;
+    }
+
+    input {
+      width: calc(100% - 32px);
+    }
+
+    .card {
+      padding: 1px 14px 14px;
+      margin-top: 20px;
+    }
+
+    .name {
+      font-size: 21px;
+    }
+  }
