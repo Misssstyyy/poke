@@ -14,7 +14,7 @@
     font-family: 'mamak';
     -webkit-text-stroke: 5px white;
       paint-order: stroke fill;        /* ← this makes stroke render BEHIND the fill */
-    margin: 0 auto 12px;
+    margin: 0 auto 20px;
     padding: 0 16px;
     line-height: 1;
     }
