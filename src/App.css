@@ -9,12 +9,14 @@
     font-size: clamp(2.25rem, 8vw, 60px);
     color:black;
     cursor:default;
+      pointer-events: none;
+    user-select: none;
     font-family: 'mamak';
     -webkit-text-stroke: 5px white;
       paint-order: stroke fill;        /* ← this makes stroke render BEHIND the fill */
-    margin: 0 auto 20px;
+    margin: 0 auto 12px;
     padding: 0 16px;
-    line-height: 1.1;
+    line-height: 1;
     }
 
   input{
