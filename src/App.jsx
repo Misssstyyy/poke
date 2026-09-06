@@ -10,6 +10,7 @@
 const[beta,setBeta] = useState(null)
 const[alpha,setAlpha] = useState(null)
     async function card(name){
+      
       const pokemonName = name.trim().toLowerCase()
 
       if (!pokemonName) {
@@ -45,7 +46,8 @@ const[alpha,setAlpha] = useState(null)
   }
   
   async function EV(name) {
-    const res = await fetch(`https://pokeapi.co/api/v2/pokemon-species/${name}/`)
+  const cleanName = name.trim().toLowerCase()  // ← add this
+  const res = await fetch(`https://pokeapi.co/api/v2/pokemon-species/${cleanName}/`)
           const beta = await res.json()
           setBeta(beta)
           const fetchy =  beta.evolution_chain.url
@@ -54,7 +56,7 @@ const[alpha,setAlpha] = useState(null)
           setAlpha(alpha)
 
           function findNextEvolution(node) {
-            if (node.species.name === name) {
+            if (node.species.name === cleanName  ) {
               return node.evolves_to?.[0]?.species?.name
             }
 
@@ -70,7 +72,7 @@ const[alpha,setAlpha] = useState(null)
             setName(nextEvolution)
             console.log(nextEvolution)
           } else {
-            console.log(`${name} has no further evolution`)
+            console.log(`${cleanName} has no further evolution`)
           }
   }
       return (<> 
@@ -89,7 +91,7 @@ const[alpha,setAlpha] = useState(null)
     <img src={sprite} ></img>
     <p>Weight: {weight/10} kg</p>
     <p>Type: {type}</p>
-    <button onClick={() => EV(name)}>Evolve !</button>
+    <button type="button" onClick={() => EV(name)}>Evolve !</button>
     </div>)}
     
     </>)
